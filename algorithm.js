@@ -1,5 +1,19 @@
 // 1. หา Prime Number
 // ให้เขียนโปรแกรมที่หาจำนวนเฉพาะตั้งแต่ 1 ถึง 100
+const findPrimeNumbers = (num) => {
+  if (num < 2) return [];
+
+  const allNumbers = Array.from({length: num + 1}, (_, i) => i);
+  
+  for (let i = 2; i < allNumbers.length; i++) {
+    if (!allNumbers[i]) continue;
+    for (let j = 2; allNumbers[i] * j < allNumbers.length; j++) {
+      allNumbers[allNumbers[i] * j] = false;
+    }
+  }
+
+  return allNumbers.splice(2).filter(Boolean);
+};
 
 
 // 2. หา Prime Number 2
@@ -73,5 +87,4 @@
 
 // 15. ผลรวมของเลขโดดหลายจำนวน
 // จงหาจำนวนเลขโดดตั้งแต่ 1 ถึง 4,129,980
-
 
