@@ -27,14 +27,65 @@ const findPrimeNumbers = (num) => {
 // input 4
 // output [2, 3, 5, 7]
 
+const findPrimeNumbers3 = (n) => {
+  if (!n) return [];
+
+  let primeNumbers = [2];
+
+  for (let i = 3; primeNumbers.length < n; i++) {
+    let isPrime = true;
+
+    for (let j = 0; j < primeNumbers.length; j++) {
+      if (primeNumbers[j] > i / 2) break;
+      if (i % primeNumbers[j] === 0) {
+        isPrime = false;
+        break;
+      };
+    }
+
+    if (isPrime) primeNumbers.push(i);
+    if (primeNumbers.length === n) return primeNumbers;
+  }
+};
+
 
 // 4. หา Prime Number 4
 // ให้เขียนโปรแกรมที่หาผลบวกจำนวนเฉพาะ n ตัวแรก
 
+const findPrimeNumbers3 = (n) => {
+  if (!n) return [];
+
+  let primeNumbers = [2];
+
+  for (let i = 3; primeNumbers.length < n; i++) {
+    let isPrime = true;
+
+    for (let j = 0; j < primeNumbers.length; j++) {
+      if (primeNumbers[j] > i / 2) break;
+      if (i % primeNumbers[j] === 0) {
+        isPrime = false;
+        break;
+      };
+    }
+
+    if (isPrime) primeNumbers.push(i);
+    if (primeNumbers.length === n) return primeNumbers.reduce((acc, num) => acc += num, 0);
+  }
+};
 
 // 5. ลำดับ
 // ให้เขียนโปรแกรมที่รับค่า n เข้ามาและให้บวกค่าของลำดับต่อไปนี้
 // 1 + 2 + 2 + 3 + 3 + 3 + ... + n + ... + n (n ตัว)
+
+const plusNNumber = n => {
+  let result = 0;
+
+  for (let i = 0; i < n; i++) {
+    result += (i * i);
+  }
+
+  return result;
+};
 
 
 // 6. Prime Number - 101
