@@ -80,7 +80,7 @@ const findPrimeNumbers3 = (n) => {
 const plusNNumber = n => {
   let result = 0;
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 1; i <= n; i++) {
     result += (i * i);
   }
 
@@ -92,6 +92,24 @@ const plusNNumber = n => {
 // ให้เขียนโปรแกรมหาผลบวกลำดับต่อไปนี้
 // 1 - 2 - 3 + 4 - 5 + 6 - 7 + 8 + 9 + 10 - 11 + ... (จำนวนที่เป็นจำนวนเฉพาะให้ติดลบ)
 
+const primeNumber101 = (n) => {
+  if (!n) return 0;
+
+  const allNumbers = Array.from({length: n + 1}, (_, i) => i * -1);
+  
+  allNumbers[1] = -allNumbers[1];
+  for (let i = 2; i < allNumbers.length; i++) {
+    if (allNumbers[i] > 0) continue;
+
+    for (let j = 2; -allNumbers[i] * j < allNumbers.length; j++) {
+      allNumbers[-allNumbers[i] * j] = Math.abs(allNumbers[-allNumbers[i] * j]);
+    }
+  }
+
+  console.log("allNumbers =", allNumbers);
+
+  return allNumbers.reduce((acc, num) => acc += num, 0);
+};
 
 // 7. ห.ร.ม.
 // ให้เขียนโปรแกรมหา ห.ร.ม ของ List ของตัวเลข
