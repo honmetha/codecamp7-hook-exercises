@@ -1,5 +1,11 @@
 // 1. หา Prime Number
 // ให้เขียนโปรแกรมที่หาจำนวนเฉพาะตั้งแต่ 1 ถึง 100
+
+// 2. หา Prime Number 2
+// ให้เขียนโปรแกรมที่รับ input เป็นตัวแปรชื่อ n โดยเมื่อรับมาแล้วให้คืนค่าออกมาเป็น List ของจำนวนเฉพาะที่มีค่าไม่มากกว่า n
+// input 9
+// output [2, 3, 5, 7]
+
 const findPrimeNumbers = (num) => {
   if (num < 2) return [];
 
@@ -14,12 +20,6 @@ const findPrimeNumbers = (num) => {
 
   return allNumbers.splice(2).filter(Boolean);
 };
-
-
-// 2. หา Prime Number 2
-// ให้เขียนโปรแกรมที่รับ input เป็นตัวแปรชื่อ n โดยเมื่อรับมาแล้วให้คืนค่าออกมาเป็น List ของจำนวนเฉพาะที่มีค่าไม่มากกว่า n
-// input 9
-// output [2, 3, 5, 7]
 
 
 // 3. หา Prime Number 3
