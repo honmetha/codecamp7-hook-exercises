@@ -106,8 +106,6 @@ const primeNumber101 = (n) => {
     }
   }
 
-  console.log("allNumbers =", allNumbers);
-
   return allNumbers.reduce((acc, num) => acc += num, 0);
 };
 
@@ -126,11 +124,23 @@ const primeNumber101 = (n) => {
 // 9. n!
 // ให้เขียนโปรแกรมหา factorial n ( n! = 1×2×3×4×...×n )
 
+const findFactorialN = (n) => {
+  let result = 1;
+
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+
+  return result;
+};
+
 
 // 10. 2 Types sort
 // ให้เขียน function ที่รับ List ของ ตัวเลข และ รับค่า boolean
 // ถ้า boolean มีค่าเป็น true เรียงลำดับตัวเลขจากน้อยไปหามาก
 // ถ้า boolean เป็น false เรียงลำดับตัวเลขจากมากไปน้อย
+
+const sortNumbers = (numArr = [], bool) => bool ? numArr.sort((a, b) => a - b) : numArr.sort((a, b) => b - a);
 
 
 // 11. 2 types sort by codecamp
@@ -146,6 +156,11 @@ const primeNumber101 = (n) => {
 // หาผลรวมของเลขที่ใส่เข้ามา
 // เช่น 130,120
 // จะได้ 1+3+0+1+2+0 = 7
+
+const findTotalNumber = (num1 = "", num2 = "") => {
+  const allNumbers = (num1 + "" + num2).split("");
+  return allNumbers.reduce((acc, num) => acc += +num, 0);
+}
 
 
 // 14. ผลรวมของเลขโดดของ n!
