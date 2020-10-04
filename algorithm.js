@@ -145,6 +145,44 @@ const sortNumbers = (numArr = [], bool) => bool ? numArr.sort((a, b) => a - b) :
 
 // 11. 2 types sort by codecamp
 // ทำเหมือนข้อ 10 แต่ห้ามใช้ฟังก์ชัน sort() และ reverse()
+// Test cases
+// [5,3,8,5,4,3,7,1]
+// []
+// [0]
+// [12,11,14,15,10,9,13,12,11]
+// [12,11,14,15,10,9,13,12,11,7]
+// [5,5,5,5,5,5,5]
+
+const sortWithoutSortMethod = (num = [], isTrue) => {
+  for (let i = 0; i < num.length - 1; i++) {
+    let min = Infinity, minIndex;
+
+    for (let j = i + 1; j < num.length; j++) {
+      if (num[i] > num[j] && num[j] < min) {
+        min = num[j];
+        minIndex = j;
+      }
+    }
+
+    if (min !== Infinity) {
+      num[minIndex] = num[i];
+      num[i] = min;
+    }
+  }
+
+  if (isTrue) return num
+
+  let start = 0;
+  let end = num.length - 1
+
+  while (start < end) {
+    [num[start], num[end]] = [num[end], num[start]];
+    start++;
+    end--;
+  }
+
+  return num;
+}
 
 
 // 12. พหุคูณ
