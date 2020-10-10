@@ -1,0 +1,35 @@
+.instruction-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  font-size: 40px;
+}
+
+.instruction-heading {
+  color: var(--main-branding-color-500);
+  margin-bottom: 20px;
+}
+
+.instruction-description {
+  color: var(--main-branding-color-400);
+}
+
+.instruction-go-home-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  background-color: var(--main-branding-color-500);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Sansita Swashed", cursive;
+  cursor: pointer;
+}

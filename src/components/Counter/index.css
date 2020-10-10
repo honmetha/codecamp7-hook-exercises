@@ -1,0 +1,15 @@
+.counter-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  color: var(--main-branding-color-500);
+}
+
+.counter-menu {
+  display: flex;
+}
+
+.counter-menu > button {
+  margin: 40px 10px;
+}
