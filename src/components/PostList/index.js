@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import NameContext from "../../context/NameContext";
 import "./index.css";
 
 function PostList(props) {
@@ -32,9 +32,11 @@ function Post(props) {
 }
 
 function ActionMenu() {
+  const name = useContext(NameContext);
+
   return (
     <div className="post-actions">
-      <span className="post-user">You are ...</span>
+      <span className="post-user">You are {name}</span>
       <button className="button post-edit-action-button">Edit</button>
       <button className="button post-delete-action-button">Delete</button>
     </div>

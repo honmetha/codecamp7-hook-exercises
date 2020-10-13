@@ -106,6 +106,10 @@ const SignupForm = () => {
   }, [firstName, lastName]);
 
   useEffect(() => {
+    document.title = `React Exercises`;
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, []);
 

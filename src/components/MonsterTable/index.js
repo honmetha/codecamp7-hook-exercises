@@ -80,11 +80,13 @@ const MonsterTable = ({ monsters }) => {
   return (
     <table style={{ width: "100%", border: "1px solid black" }}>
       <thead>
-        <th>Name</th>
-        <th>Element</th>
-        <th>HP</th>
-        <th>MP</th>
-        <th>Rating</th>
+        <tr>
+          <th>Name</th>
+          <th>Element</th>
+          <th>HP</th>
+          <th>MP</th>
+          <th>Rating</th>
+        </tr>
       </thead>
       <tbody>
         {monsters.map((monster) => {
