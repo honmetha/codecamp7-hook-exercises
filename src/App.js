@@ -15,7 +15,7 @@ import NameContext from "./context/NameContext";
 
 function App() {
   return (
-    <NameContext.Provider value={"John"}>
+    <NameContext.Provider value={{ name: "John", themeColor: "white" }}>
       <Router>
         <Switch>
           <Route path="/exercise-10" component={Exercise10} />

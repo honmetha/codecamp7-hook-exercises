@@ -21,8 +21,10 @@ function PostList(props) {
 
 function Post(props) {
   const { title, description, author } = props;
+  const { themeColor } = useContext(NameContext);
+
   return (
-    <div className="post">
+    <div className="post" style={{ backgroundColor: themeColor }}>
       <h1 className="post-title">{title}</h1>
       <p className="post-description">{description}</p>
       <p className="post-author">Author: {author}</p>
@@ -32,7 +34,7 @@ function Post(props) {
 }
 
 function ActionMenu() {
-  const name = useContext(NameContext);
+  const { name } = useContext(NameContext);
 
   return (
     <div className="post-actions">
